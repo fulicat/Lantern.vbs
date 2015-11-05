@@ -1,5 +1,7 @@
-' Lantern in Lan
-' Lantern.vbs
+' Lantern.vbs  ( Lantern in Lan )
+' @authors Jack Chan (fulicat@qq.com)
+' @date    2015-10-31 ‏‎11:54:06
+' @update  2015-11-05 22:02:58
 
 ' ========== Config ==============================
 Dim LanternConfig
@@ -78,7 +80,11 @@ pacURL = ws.RegRead("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion
 'MsgBox pacURL
 
 ' Run Lantern
-ws.Run "lantern.exe"
+'ws.Run "lantern.exe"  ' default
+'ws.Run "lantern.exe -startup"  ' startup without launch browser
+'ws.Run "lantern.exe -headless=true"  ' startup without trayicon
+'ws.Run "lantern.exe -clear-proxy-settings"
+ws.Run "lantern.exe -startup"
 
 Set ws = Nothing
 WScript.Quit
